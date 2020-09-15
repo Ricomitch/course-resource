@@ -1,30 +1,8 @@
 # COURSE RESOURCE <!-- omit in toc -->
 
-> The Project Planning section **should be completed** for your project pitch with instructors.
->
-> To ensure correct Markdown, copy and paste the raw template code into your project repo README file. Remove ALL template instructions and replace with your project details.
-
-- [Overview](#overview)
-- [MVP](#mvp)
-  - [Goals](#goals)
-  - [Libraries and Dependencies](#libraries-and-dependencies)
-  - [Client (Front End)](#client-front-end)
-    - [Wireframes](#wireframes)
-    - [Component Tree](#component-tree)
-    - [Component Hierarchy](#component-hierarchy)
-    - [Component Breakdown](#component-breakdown)
-    - [Time Estimates](#time-estimates)
-  - [Server (Back End)](#server-back-end)
-    - [ERD Model](#erd-model)
-- [Post-MVP](#post-mvp)
-- [Code Showcase](#code-showcase)
-- [Code Issues & Resolutions](#code-issues--resolutions)
-
-<br>
-
 ## Overview
 
-_**Project Title** is lorem ipsum dolor sit amet. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+_**Course Resource** is a bootcamp review site were a user can make and read reviews about bootcamps, this is inspire buy CourseReport._
 
 
 <br>
@@ -39,11 +17,11 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 ### Goals
 
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
-- _etc._
+- _User will be able to log in to their own account_
+- _User will be able to create, read, update, and delete post_
+- _User should have the ability to comment on posts_
+- _Utilize at least three tables in a Rails database, with a React front-end_
+- _Responsive Design for at least three sizes of screen_
 
 <br>
 
@@ -53,11 +31,11 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+|      React       | _The umbrella library for the entire front-end._ |
+|   React Router   | _Specifies which routes call which components._ |
+| React-router-dom | _Allows Links within the components._ |
+|      Axios       | _Makes calls to the database._ |
+
 
 <br>
 
@@ -65,35 +43,17 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 #### Wireframes
 
-> Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
+![homepage](https://imgur.com/XhObuaJ.png)
 
-![Dummy Link](url)
+![homepage login](https://imgur.com/PGwCMAP.png)
 
-- Desktop Landing
-
-![Dummy Link](url)
-
-- Desktop Hero
-
-![Dummy Link](url)
-
-- Resource Index
-
-![Dummy Link](url)
-
-- Resource Show
-
-![Dummy Link](url)
-
-- Tablet Resource Index
-
-![Dummy Link](url)
-
-- Mobile Resource Index
+![review page](https://imgur.com/Ll8eacE.png)
 
 #### Component Tree
 
 > Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. 
+
+![diagram](https://imgur.com/EqAi20z.png)
 
 #### Component Hierarchy
 
@@ -103,13 +63,27 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 src
 |__ assets/
+      |__ icons
       |__ fonts
-      |__ graphics
-      |__ images
-      |__ mockups
 |__ components/
-      |__ Header.jsx
+      |__ NavBar.jsx
+      |__ ReviewCard.jsx
 |__ services/
+      |__ api-config.js
+      |__ auth.js
+      |__ users.js
+      |__ review.js
+|__ screens/
+      |__ Home.jsx
+      |__ CreateReview.jsx
+      |__ DetailReview.jsx
+      |__ EditDeleteReview.jsx
+      |__ Login.jsx
+|__ layouts/
+      |__ Layout.jsx
+|__ containers/
+      |__ Container.jsx
+|__ App.js
 
 ```
 
@@ -119,11 +93,14 @@ src
 
 |  Component   |    Type    | state | props | Description                                                      |
 | :----------: | :--------: | :---: | :---: | :--------------------------------------------------------------- |
-|    Header    | functional |   n   |   n   | _The header will contain the navigation and logo._               |
-|  Navigation  | functional |   n   |   n   | _The navigation will provide a link to each of the pages._       |
-|   Gallery    |   class    |   y   |   n   | _The gallery will render the posts using cards in flexbox._      |
-| Gallery Card | functional |   n   |   y   | _The cards will render the post info via props._                 |
-|    Footer    | functional |   n   |   n   | _The footer will show info about me and a link to my portfolio._ |
+|    Navigation    | functional |   n   |   n   | _The header will contain the navigation and logo._               |
+|  Container  | functional |   y   |   n   | _The navigation will provide a link to each of the pages._       |
+|   ReviewCard    |   class    |   n   |   y   | _The gallery will render the posts using cards in flexbox._      |
+| Home | functional |   n   |   y   | _The cards will render the post info via props._                 |
+|    CreateReview    | functional |   n   |   n   | _The footer will show info about me and a link to my portfolio._ |
+|    DetailReview    | functional |   n   |   n   | _The footer will show info about me and a link to my portfolio._ |
+|    EditDeleteReview    | functional |   n   |   n   | _The footer will show info about me and a link to my portfolio._ |
+|    login    | functional |   n   |   n   | _The footer will show info about me and a link to my portfolio._ |
 
 #### Time Estimates
 
@@ -144,6 +121,8 @@ src
 #### ERD Model
 
 > Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
+
+![erd](https://imgur.com/BeysXBw.png)
 
 <br>
 
