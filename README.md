@@ -2,7 +2,7 @@
 
 ## Overview
 
-_**Course Resource** is a bootcamp review site were a user can make and read reviews about bootcamps, this is inspire buy CourseReport._
+_**Course Resource** is a bootcamp review site were a user can make and read reviews about bootcamps, this is inspired by CourseReport._
 
 
 <br>
