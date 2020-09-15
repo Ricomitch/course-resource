@@ -44,6 +44,8 @@ _**Course Resource** is a bootcamp review site were a user can make and read rev
 
 ![review page](https://imgur.com/Ll8eacE.png)
 
+![mobile page](https://imgur.com/PGLxBAF.png) ![mobile page](https://imgur.com/sTgoLGh.png)
+
 #### Component Tree
 
 ![diagram](https://imgur.com/EqAi20z.png)
