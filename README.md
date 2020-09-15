@@ -71,6 +71,7 @@ src
       |__ CreateReview.jsx
       |__ DetailReview.jsx
       |__ EditDeleteReview.jsx
+      |__ Rating.jsx
       |__ Login.jsx
 |__ layouts/
       |__ Layout.jsx
