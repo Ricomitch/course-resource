@@ -6,40 +6,42 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# Course.destroy_all
+# Review.destroy_all
 
 courses = Course.create ([
 
 { 
   name: "General Assembly",
-  image_url: "image1"
+  image_url: "https://coursereport-s3-production.global.ssl.fastly.net/rich/rich_files/rich_files/3423/s200/general-assembly-reviews-logo.jpg"
 }, 
 { 
   name: "Devmountain",
-  image_url: "image2"
+  image_url: "https://coursereport-s3-production.global.ssl.fastly.net/rich/rich_files/rich_files/820/s200/dev-mountain-logo.png"
 },
 { 
   name: "Flatiron School",
-  image_url: "image3" 
+  image_url: "https://coursereport-s3-production.global.ssl.fastly.net/rich/rich_files/rich_files/999/s200/flatironschool.png" 
 }, 
 { 
   name: "App Academy",
-  image_url: "image4" 
+  image_url: "https://coursereport-s3-production.global.ssl.fastly.net/rich/rich_files/rich_files/2005/s200/logo-emblem-red-1000-1-.jpg" 
 }, 
 { 
   name: "Coding Dojo",
-  image_url: "image5" 
+  image_url: "https://coursereport-s3-production.global.ssl.fastly.net/rich/rich_files/rich_files/2470/s200/cd-logo-blue-600x600.png" 
 }, 
 { 
   name: "Hack Reactor",
-  image_url: "image6" 
+  image_url: "https://coursereport-s3-production.global.ssl.fastly.net/rich/rich_files/rich_files/2686/s200/logo-graybg-02.png" 
 },
 { 
-  name: "Coding Temple",
-  image_url: "image7" 
+  name: "Le Wagon",
+  image_url: "https://coursereport-s3-production.global.ssl.fastly.net/rich/rich_files/rich_files/4791/s200/logo-big.png" 
 }, 
 { 
   name: "Codesmith",
-  image_url: "image8" 
+  image_url: "https://coursereport-s3-production.global.ssl.fastly.net/rich/rich_files/rich_files/4887/s200/white-background.png" 
 }
 ])
 
