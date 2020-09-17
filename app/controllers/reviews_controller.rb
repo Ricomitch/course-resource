@@ -53,7 +53,7 @@
     
         # Only allow a trusted parameter "white list" through.
         def review_params
-          params.require(:review).permit(:title, :description, :score, :airline_id)
+          params.require(:review).permit(:title, :description, :score, :course_id)
         end
     end
     
