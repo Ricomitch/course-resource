@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
-  post '/auth/login', to: 'authentication#login'
-  get '/auth/verify', to: 'authentication#verify'
-  resources :users, only: :create
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'pages#index'
 
-  # https://guides.rubyonrails.org/routing.html#controller-namespaces-and-routing
+  namespace :api do
+    namespace :v1 do
   
+  # resources :users, only: :create
+  resources :courses, param: :slug
+  resources :reviews, only [:create, :destroy]
+
+  # post '/auth/login', to: 'authentication#login'
+  # get '/auth/verify', to: 'authentication#verify'
+
+   end
+  end 
+  #routes undefined request back to our index path
+  get '*path', to: 'pages#index', via: :all
 end
