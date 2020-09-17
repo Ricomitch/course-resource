@@ -1,5 +1,5 @@
-module Api
-  module V1
+# module Api
+#   module V1
     class ReviewsController < ApplicationController
     
       # GET /reviews
@@ -57,6 +57,6 @@ module Api
         end
     end
     
-   end
-  end
+  #  end
+  # end
 

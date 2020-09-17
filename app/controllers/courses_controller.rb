@@ -1,5 +1,5 @@
-module Api
-  module V1
+# module Api
+#   module V1
     class CoursesController < ApplicationController
       # before_action :set_course, only: [:show, :update, :destroy]
     
@@ -12,7 +12,7 @@ module Api
     
       # GET /courses/1
       def show
-        course = Airline.find_by(slug: params[:slug])
+        course = Course.find_by(slug: params[:slug])
 
         render json: CourseSerializer.new(course, options).serialized_json
       end
@@ -62,9 +62,9 @@ module Api
      end
 
      def options
-           @options || = { includes: %i[reviews] }
-     end
+      @options ||= { include: %i[reviews] }
     end
-  end
-end
+    end
+#   end
+# end
 
