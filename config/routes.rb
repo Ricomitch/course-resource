@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
-  resources :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-end
+  root 'pages#index'
+
+  # namespace :api do
+    # namespace :controllers do
+  
+  resources :users, only: :create
+  resources :courses, param: :slug
+  resources :reviews, only: [:create, :destroy]
+
+  post '/auth/login', to: 'authentication#login'
+  get '/auth/verify', to: 'authentication#verify'
+
+
+  get '*path', to: 'pages#index', via: :all   
+  end
+   
+
+  #routes undefined request back to our index path
+  # get '*path', to: 'pages#index', via: :all
+
