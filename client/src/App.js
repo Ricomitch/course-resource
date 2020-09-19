@@ -5,6 +5,12 @@ import Layout from './layouts/Layout';
 import { Login } from './screens/Login';
 
 function App() {
+  const [currentUser, setCurrentUser] = useState(null) 
+
+  const loginSubmit = () => {
+    
+  }
+
   return (
     <Layout>
       <Switch>
