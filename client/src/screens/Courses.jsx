@@ -5,8 +5,10 @@ const Courses = () => {
   const [courses, setCourses] = useState([])
 
   useEffect(() => {
-   axios.get('')
-  })
+    axios.get('/courses.json')
+      .then( resp => console.log(resp) )
+      .catch( resp => console.log(resp) )
+  }, [courses.length])
 
   return (
     <div>

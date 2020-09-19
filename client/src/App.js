@@ -5,7 +5,7 @@ import Layout from './layouts/Layout';
 import { Login } from './screens/Login';
 import { loginUser } from './services/auth';
 import Courses from './components/Courses';
-import Course from './components/Course';
+import Course from './screens/Course';
 
 
 function App() {
