@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import api from '../services/api-config';
 import CourseHeader from './CourseHeader'
+import ReviewForm from './ReviewForm';
 
 
 
@@ -27,23 +28,24 @@ const Course = (props) => {
 
   return (
       <div className="wrapper">
-      <div className="column">
-        {
-          loaded &&
+      {
+        loaded &&
+        <div className="column">
+        
           <CourseHeader
             attributes={course.data.attributes}
             reviews={course.included}
           />
-        }
-      <div className="reviews"></div>
-      </div>
-      
+        
+          <div className="reviews"></div>
+        </div>
+      }
       
       <div className="column">
-        <div className="review-form">review form is here</div>
+        <ReviewForm />
       </div>
     </div>
   )
-}
+} 
 
 export default Course
