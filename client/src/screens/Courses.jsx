@@ -1,14 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React from 'react'
 
 const Courses = () => {
-  const [courses, setCourses] = useState([])
-
-  useEffect(() => {
-    axios.get('/courses.json')
-      .then( resp => console.log(resp) )
-      .catch( resp => console.log(resp) )
-  }, [courses.length])
+  
 
   return (
     <div>
@@ -18,4 +11,18 @@ const Courses = () => {
 }
 
 export default Courses
+
+// import React from 'react'
+
+// export default function Courses(props) {
+  
+
+//   return (
+//     <div>
+//       {props.courses.map(course => (
+//         <p key={course.id}>{course.name}</p>
+//       ))}
+//     </div>
+//   )
+// }
 
