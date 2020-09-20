@@ -1,28 +1,15 @@
+
 import React from 'react'
 
-const Courses = () => {
+export default function Courses(props) {
   
 
   return (
     <div>
-      index view
+      {props.courses.map(course => (
+        <p key={course.attributes.id}>{course.attributes.name}</p>
+      ))}
     </div>
   )
 }
-
-export default Courses
-
-// import React from 'react'
-
-// export default function Courses(props) {
-  
-
-//   return (
-//     <div>
-//       {props.courses.map(course => (
-//         <p key={course.id}>{course.name}</p>
-//       ))}
-//     </div>
-//   )
-// }
 
