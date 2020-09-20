@@ -14,7 +14,7 @@ const CourseContainer = (props) => {
     const url = `/courses/${slug}`
     
     api.get(url)
-      .then( resp => console.log(resp))
+      .then( resp => setCourse(resp.data))
       .catch( resp => console.log(resp) )
     
 
