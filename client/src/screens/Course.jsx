@@ -33,7 +33,8 @@ const Course = (props) => {
     api.post('/reviews', { review, course_id })
       .then(resp => {
         const included = [...course.included, resp.data]
-        setCourse({...course, included})
+        setCourse({ ...course, included })
+        setReview({title: '', description: '', score: 0})
       })
     .catch(resp => {})
 
