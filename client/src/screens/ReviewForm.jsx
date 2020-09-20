@@ -3,17 +3,19 @@ import React from 'react'
 const ReviewForm = (props) => {
   return (
     <div className="wrapper">
-      <form>
-        <div>Have you taken a course at [course name]? tell us about it!</div>
+      <form onSubmit={props.handleSubmit}>
+        <div>Have you taken a course at {props.attributes.name}? tell us about it!</div>
         <div className="field">
-          <input
+          <input onChange={props.handleChange}
+            value={props.review.title}
             type="text"
             name="title"
             placeholder="Review Title"
           />  
         </div>
         <div className="field">
-          <input
+          <input onChange={props.handleChange}
+            value={props.review.description}
             type="text"
             name="description"
             placeholder="Review description"
