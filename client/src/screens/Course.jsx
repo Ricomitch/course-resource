@@ -37,8 +37,12 @@ const Course = (props) => {
         setReview({title: '', description: '', score: 0})
       })
     .catch(resp => {})
+  }
+  
+  const setRating = (score, e) => {
+    e.preventDefault()
 
-    
+    debugger
   }
 
   return (
@@ -58,6 +62,7 @@ const Course = (props) => {
             <ReviewForm
               handleChange={handleChange}
               handleSubmit={handleSubmit}
+              setRating={setRating}
               attributes={course.data.attributes}
               review={review}
             />
