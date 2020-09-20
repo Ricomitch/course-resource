@@ -30,7 +30,12 @@ const Course = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     const course_id = course.data.id
-    api.post('/reviews', {review, course_id})
+    api.post('/reviews', { review, course_id })
+      .then(resp => {
+        const included = [...course.included, resp.data]
+        setCourse({...course, included})
+      })
+    .catch(resp => {})
 
     
   }
