@@ -12,6 +12,7 @@ export const CoursesContainer = () => {
       setCourses(coursesArray);
     }
     fetchCourses();
+    
 
   }, [])
 
