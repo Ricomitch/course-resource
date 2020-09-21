@@ -2,26 +2,26 @@
 import api from './api-config'
 
 export const getAllCourses = async () => {
-  const resp = await api.get('/courses');
+  const resp = await api.get('/reviews');
   return resp.data;
 }
 
 export const getOneCourse = async (id) => {
-  const resp = await api.get(`/foods/${id}`);
+  const resp = await api.get(`/reviews/${id}`);
   return resp.data;
 }
 
 export const putCourse = async (id, formData) => {
-  const resp = await api.put(`/foods/${id}`, { food: formData })
+  const resp = await api.put(`/reviews/${id}`, { food: formData })
   return resp.data;
 }
 
 export const postCourse = async (formData) => {
-  const resp = await api.post('/courses', { courses: formData })
+  const resp = await api.post('/reviews', { courses: formData })
   return resp.data;
 }
 
-export const deleteCourse = async (slug) => {
-  const resp = await api.delete(`/courses/${slug}`)
+export const deleteCourse = async (id) => {
+  const resp = await api.delete(`/reviews/${id}`)
   return resp.data;
 }

@@ -8,6 +8,7 @@ import { CoursesContainer } from './containers/CoursesContainer';
 import CourseContainer from './containers/CourseContainer';
 import Course from './screens/Course';
 import Courses from './screens/Courses';
+import ReviewEdit from './screens/ReviewEdit';
 
 
 function App() {
@@ -21,6 +22,10 @@ function App() {
   return (
     <Layout>
       <Switch>
+
+        <Route path='/reviews/:id/edit' component={ReviewEdit}/>
+      
+
         <Route path='/login'>
           <Login loginSubmit={loginSubmit} />
         </Route>
@@ -30,7 +35,6 @@ function App() {
 
         <Route exact path='/' component={Courses} />
         <Route exact path='/courses/:slug' component={Course} />
-
       </Switch>
     </Layout>
   );

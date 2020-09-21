@@ -56,7 +56,7 @@ const Course = (props) => {
       return (
         <Review
           key={index}
-          attributes={item.attributes}
+          review={item}
         />
       )
     })

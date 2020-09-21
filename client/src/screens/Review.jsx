@@ -1,9 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Rating from '../components/Rating'
 import './Review.css'
+import ReviewEdit from './ReviewEdit'
 
 const Review = (props) => {
-  const { score, title, description } = props.attributes
+  const { id, attributes } = props.review
+  const { score, title, description } = attributes
   return (
     <div>
       <div className="card">
@@ -12,7 +15,7 @@ const Review = (props) => {
       </div>
         <div className="title">{title}</div>
         <div className="description">{description}</div>
-        <button>Edit</button>
+        <Link to={`/reviews/${id}/edit`}>Edit</Link>
         <button>Delete</button>
       </div>
     </div>
