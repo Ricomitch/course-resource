@@ -1,0 +1,28 @@
+.card {
+  border: 1px solid #efefef;
+  background: rgb(255, 255, 255);
+}
+
+.course-logo {
+  height: 50px;
+}
+
+img {
+  height: 50px;
+    width: 50px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 100%;
+}
+
+.course-name {
+  padding: 20px 0 10px 0;
+}
+
+.course-score {
+
+}
+
+.course-link {
+  margin: 30px 0 20px 0;
+  height:50px;
+}

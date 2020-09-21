@@ -7,6 +7,7 @@ import { loginUser } from './services/auth';
 import { CoursesContainer } from './containers/CoursesContainer';
 import CourseContainer from './containers/CourseContainer';
 import Course from './screens/Course';
+import Courses from './screens/Courses';
 
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
           <component />
         </Route> */}
 
-        <Route exact path='/' component={CoursesContainer} />
+        <Route exact path='/' component={Courses} />
         <Route exact path='/courses/:slug' component={Course} />
 
       </Switch>
