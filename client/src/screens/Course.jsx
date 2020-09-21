@@ -67,7 +67,7 @@ const Course = (props) => {
   const setRating = (score, e) => {
     e.preventDefault()
 
-    debugger
+    setReview({...review, score})
   }
 
   return (
