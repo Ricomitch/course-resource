@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
-import useParams from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { useParams, useHistory } from 'react-router-dom'
+import { getOneReview } from '../services/reviews';
+
 
 export default function ReviewEdit(props) {
   const [formData, setFormData] = useState({
@@ -7,6 +9,21 @@ export default function ReviewEdit(props) {
     description: ""
   })
   const { title, description } = formData;
+  const { id } = useParams();
+  const { reviews, updateSubmit } = props;
+  console.log(props)
+  useEffect(() => {
+    const preFillFormData = () => {
+      const oneReview = reviews.find(review => {
+        return review.id === Number(id);
+      })
+      const { title, description } = oneReview;
+      setFormData({ title, description });
+    }
+    if (reviews.length) {
+      preFillFormData()
+    }
+  }, [reviews, id])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,7 +34,11 @@ export default function ReviewEdit(props) {
   }
   
   return (
-    <form>
+    <form
+    onSubmit={(e) => {
+      e.preventDefault();
+      updateSubmit(id, formData)
+    }}>
       <input name='title' type='text' value={title} onChange={handleChange} />
       <input name='description' type='text' value={description} onChange={handleChange} />
       <button>Submit</button>

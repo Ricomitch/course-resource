@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   
   resources :users, only: :create
   resources :courses, param: :slug
-  resources :reviews, only: [:create, :destroy]
-
+  resources :reviews
+  # put '/reviews/:id', to: 'reviews#update'
   post '/auth/login', to: 'authentication#login'
   get '/auth/verify', to: 'authentication#verify'
 
