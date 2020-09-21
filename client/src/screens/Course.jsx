@@ -49,6 +49,7 @@ const Course = (props) => {
     setReview({ ...review, score })
   }
   
+
   let reviews
   if (loaded && course.included) {
     reviews = course.included.map((item, index) => {
@@ -69,7 +70,8 @@ const Course = (props) => {
           <div className='main'>
             <CourseHeader
               attributes={course.data.attributes}
-              reviews={course.included}
+                  reviews={course.included}
+                
             />
 
             {reviews}
