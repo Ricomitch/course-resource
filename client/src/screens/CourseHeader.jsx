@@ -10,7 +10,7 @@ const CourseHeader = (props) => {
       <div>
         <div className="totalReviews">{total} User Reviews</div>
         <div className="starRating"></div>
-        <div className="totalOutOf">{avg_score} out of 5</div>
+        <div className="totalOutOf">{avg_score} out of 5 stars</div>
       </div>  
       
     </div>

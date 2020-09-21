@@ -3,31 +3,10 @@ import { Route, Switch } from 'react-router-dom'
 import api from '../services/api-config'
 import CourseHeader from './CourseHeader'
 import ReviewForm from './ReviewForm'
-import styled from 'styled-components'
+import Review from './Review'
 import './Course.css'
 
 
-/* .wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.column {
-  background: #fff;
-  height: 100vh;
-  overflow: scroll;
-}
-  .column-2 {
-  
-    background: #000;
-
-}
-
-.main {
- padding-left: 50px;
-} */
 
 const Course = (props) => {
   const [course, setCourse] = useState({})
@@ -48,7 +27,7 @@ const Course = (props) => {
 
   const handleChange = (e) => {
     e.preventDefault()
-    setReview(Object.assign({}, review, {[e.target.name]: e.target.value}))
+    setReview(Object.assign({}, review, { [e.target.name]: e.target.value }))
     console.log('reviews:', review)
   }
 
@@ -57,19 +36,30 @@ const Course = (props) => {
     const course_id = course.data.id
     api.post('/reviews', { review, course_id })
       .then(resp => {
-        const included = [...course.included, resp.data]
+        const included = [...course.included, resp.data.data ]
         setCourse({ ...course, included })
-        setReview({title: '', description: '', score: 0})
+        setReview({ title: '', description: '', score: 0 })
       })
-    .catch(resp => {})
+      .catch(resp => { })
   }
   
   const setRating = (score, e) => {
     e.preventDefault()
 
-    setReview({...review, score})
+    setReview({ ...review, score })
   }
-
+  
+  let reviews
+  if (loaded && course.included) {
+    reviews = course.included.map((item, index) => {
+      return (
+        <Review
+          key={index}
+          attributes={item.attributes}
+        />
+      )
+    })
+  }
   return (
     <div className='wrapper'>
       {
@@ -82,7 +72,7 @@ const Course = (props) => {
               reviews={course.included}
             />
 
-            <div className='reviews'></div>
+            {reviews}
           </div>
           </div>
           <div className='column-2'>
