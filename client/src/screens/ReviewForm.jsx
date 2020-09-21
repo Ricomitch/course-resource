@@ -19,7 +19,9 @@ background: #fff;
   flex-direction: row-reverse;
   position: relative;
 
-  input { display: none; 
+  input { 
+    display: none; 
+    width: 100%;
   }
 
   label {
@@ -43,12 +45,61 @@ background: #fff;
     background-image: url("data:image/svg+xml;charset=UTF-8,${Hover}"); 
   }
 `
-const Field = styled.div``
-const Wrapper = styled.div`
-const SubmitBtn = styled.button`
 const Field = styled.div`
+border-radius: 4px;
+input {
+  width: 94%;
+  min-height:50px;
+  border-radius: 4px;
+  border: 1px solid #E6E6E6;
+  margin: 12px 0;
+  padding: 12px;
+}
 
-const RatingTitle = styled.div``
+textarea {
+  width: 100%;
+  min-height:80px;
+  border-radius: 4px;
+  border: 1px solid #E6E6E6;
+  margin: 12px 0;
+  padding: 12px;      
+}
+`
+const Wrapper = styled.div`
+  background: white;
+  padding: 20px;
+  background: #000;
+  height: 100vh;
+  padding-top: 100px ;
+`
+const SubmitBtn = styled.button`
+  color: #fff;
+  background-color: #71b406;
+  border-radius: 4px;   
+  padding:12px 12px;  
+  border: 1px solid #71b406;
+  width:100%;
+  margin-top: 20px;
+  font-size:18px;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+  &:hover {
+    background: #71b406;
+    border-color: #71b406;
+  }
+`
+const Headline = styled.div`
+  font-size: 30px;
+  padding: 15px 0;
+  font-weight: bold;
+  color: #fff
+`
+
+const RatingTitle = styled.div`
+font-size: 20px;
+padding-bottom: 20px;
+font-weight: bold;
+`
 
 
 
@@ -62,36 +113,36 @@ const ReviewForm = (props) => {
     )
   })
   return (
-    <div className="wrapper">
+    <Wrapper>
       <form onSubmit={props.handleSubmit}>
-        <div>Have you taken a course at {props.attributes.name}? tell us about it!</div>
-        <div className="field">
+        <Headline>Have you taken a course at {props.attributes.name}? tell us about it!</Headline>
+        <Field>
           <input onChange={props.handleChange}
             value={props.review.title}
             type="text"
             name="title"
             placeholder="Review Title"
           />  
-        </div>
-        <div className="field">
+        </Field>
+        <Field>
           <input onChange={props.handleChange}
             value={props.review.description}
             type="text"
             name="description"
             placeholder="Review description"
           />  
-        </div>
-        <div className="field">
+        </Field>
+        <Field>
           <RatingContainer>
-            <div className="rating-title-text">Rate This Course</div>
+            <RatingTitle className="rating-title-text">Rate This Course</RatingTitle>
             <RatingBox>
               {ratingOptions}
               </RatingBox>
           </RatingContainer>
-          </div>
-        <button type="submit">Submit Your Review</button>
+          </Field>
+        <SubmitBtn type="submit">Submit Your Review</SubmitBtn>
       </form>
-    </div>
+    </Wrapper>
   )
 }
 
