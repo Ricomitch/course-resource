@@ -1,25 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { Switch, Route } from 'react-router-dom';
+import Layout from './layouts/Layout';
+import { Login } from './screens/Login';
+import { loginUser } from './services/auth';
+import { CoursesContainer } from './containers/CoursesContainer';
+import CourseContainer from './containers/CourseContainer';
+import Course from './screens/Course';
+import Courses from './screens/Courses';
+
 
 function App() {
+  const [currentUser, setCurrentUser] = useState(null) 
+
+  const loginSubmit = async (loginData) => {
+    const userData = await loginUser(loginData);
+    setCurrentUser(userData)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Switch>
+        <Route path='/login'>
+          <Login loginSubmit={loginSubmit} />
+        </Route>
+        {/* <Route path='/register'>
+          <component />
+        </Route> */}
+
+        <Route exact path='/' component={Courses} />
+        <Route exact path='/courses/:slug' component={Course} />
+
+      </Switch>
+    </Layout>
   );
 }
 

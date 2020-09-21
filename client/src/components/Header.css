@@ -1,0 +1,21 @@
+Header {
+  background-color: #1e1e1e;
+  height: 50px;
+  padding: 5px;
+}
+
+.nav-text {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+h1 {
+  margin-top: 5px;
+}
+
+.login-link {
+  
+  display: flex;
+  text-align: center;
+}

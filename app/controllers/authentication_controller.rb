@@ -27,4 +27,4 @@
       params.require(:authentication).permit(:email, :password)
     end
   end
-end
+

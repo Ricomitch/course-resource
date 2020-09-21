@@ -16,7 +16,7 @@
     
       # POST /reviews
       def create
-        review = Review.new(review_params)
+        review = course.reviews.new(review_params)
     
         if review.save
           render json: ReviewSerializer.new(review).serialized_json
@@ -50,6 +50,9 @@
         # def set_review
         #   @review = Review.find(params[:id])
         # end
+        def course
+          @course ||= Course.find(params[:course_id])
+        end
     
         # Only allow a trusted parameter "white list" through.
         def review_params

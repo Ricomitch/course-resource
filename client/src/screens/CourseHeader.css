@@ -1,0 +1,27 @@
+.wrapper {
+  padding: 50px 100px 50px 0;
+}
+
+img {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  border: 1px solid rgba(0,0,0,0.2);
+  margin-bottom: -8px;
+}
+
+h1 {
+  font-size: 30px;
+
+}
+
+.totalReviews {
+  font-size: 18px;
+  padding: 10px 0;
+}
+
+.totalOutOf {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 0;
+}
