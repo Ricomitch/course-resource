@@ -13,7 +13,6 @@ _**Course Resource** is a bootcamp review site were a user can make and read rev
 
 ### Goals
 
-- _User will be able to log in to their own account_
 - _User will be able to create, read, update, and delete post_
 - _User will be able to rate a course_
 - _Utilize at least three tables in a Rails database, with a React front-end_
