@@ -1,4 +1,5 @@
 import React from 'react'
+import './CourseHeader.css'
 
 const CourseHeader = (props) => {
   const { name, image_url, avg_score } = props.attributes

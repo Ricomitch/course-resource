@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
-import './CourseHead.css'
+import './CourseCard.css'
 
 const CourseCard = (props) => {
   return (
