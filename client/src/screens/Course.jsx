@@ -1,25 +1,31 @@
 import React, { useEffect, useState, Fragment } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, useParams } from 'react-router-dom'
 import api from '../services/api-config'
 import CourseHeader from './CourseHeader'
 import ReviewForm from './ReviewForm'
 import Review from './Review'
 import './Course.css'
+import { deleteReview } from '../services/reviews'
 
 
 
 const Course = (props) => {
   const [course, setCourse] = useState({})
   const [review, setReview] = useState({})
+  let [reviews_s, setReviews] = useState([])
   const [loaded, setLoaded] = useState(false)
+  let { slug } = useParams()
 
   useEffect(() => {
-    const slug = props.match.params.slug
+    // const slug = props.match.params.slug
     const url = `/courses/${slug}`
 
     api.get(url)
       .then((resp) => {
+        console.log(resp.data)
         setCourse(resp.data)
+        console.log('rico',resp.data.included)
+        setReviews(resp.data.included)
         setLoaded(true)
       })
       .catch((resp) => console.log(resp))
@@ -42,6 +48,13 @@ const Course = (props) => {
       })
       .catch(resp => { })
   }
+
+  const handleDelete = async (id) => {
+    console.log('course hd',id)
+    await deleteReview(id);
+    console.log('new reviews', reviews_s)
+    setReviews(prevState => prevState.filter(review => review.id !== id))
+  }
   
   const setRating = (score, e) => {
     e.preventDefault()
@@ -53,10 +66,15 @@ const Course = (props) => {
   let reviews
   if (loaded && course.included) {
     reviews = course.included.map((item, index) => {
+      console.log('attributes', item.attributes)
       return (
         <Review
           key={index}
+          review_id={item.id}
+          attributes={item.attributes}
           review={item}
+          reviews={reviews}
+          handleDelete = {handleDelete}
         />
       )
     })

@@ -37,10 +37,7 @@ function App() {
     setReviews(prevState => prevState.map(review => review.id === Number(id) ? updatedReview : review));
   }
 
-  // const handleDelete = async (id) => {
-  //   await deleteReview(id);
-  //   setReviews(prevState => prevState.filter(review => review.id !== id))
-  // }
+ 
   
   return (
     <Layout>
@@ -59,13 +56,18 @@ function App() {
         </Route> */}
 
         <Route exact path='/' component={Courses} />
-        <Route exact path='/courses/:slug' component={Course} />
+        <Route exact path='/courses/:slug' render={() =>
+        <Course
+        reviews={reviews} />
+        }/>
         
-        <reviews
+        
+
+        {/* <reviews
           reviews={reviews}
           // handleDelete={handleDelete}
           // currentUser={currentUser}
-        />
+        /> */}
       </Switch>
     </Layout>
   );
