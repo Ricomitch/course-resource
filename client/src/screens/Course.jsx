@@ -18,7 +18,6 @@ const Course = (props) => {
 
 
   useEffect(() => {
-    // const slug = props.match.params.slug
     const url = `/courses/${slug}`
 
     api.get(url)
