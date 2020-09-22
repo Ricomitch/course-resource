@@ -19,7 +19,7 @@ const Review = (props) => {
         <div className="title">{title}</div>
         <div className="description">{description}</div>
         <Link to={`/reviews/${props.review_id}/edit`}>Edit</Link>
-        <button onClick={() => handleDelete(props.review_id)}>Delete</button>
+        <Link><button onClick={() => handleDelete(props.review_id)}>Delete</button></Link>
       </div>
     </div>
   )
