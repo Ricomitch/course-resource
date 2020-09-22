@@ -1,12 +1,15 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
 import Rating from '../components/Rating'
 import './Review.css'
 import ReviewEdit from './ReviewEdit'
 
 const Review = (props) => {
-  const { id, attributes } = props.review
+  const { attributes } = props
   const { score, title, description } = attributes
+  const { handleDelete, reviews} = props
+  const [review, setReview] = useState(null)
+  const { id } = useParams()
   return (
     <div>
       <div className="card">
@@ -15,8 +18,8 @@ const Review = (props) => {
       </div>
         <div className="title">{title}</div>
         <div className="description">{description}</div>
-        <Link to={`/reviews/${id}/edit`}>Edit</Link>
-        <button>Delete</button>
+        <Link to={`/reviews/${props.review_id}/edit`}>Edit</Link>
+        <button onClick={() => handleDelete(props.review_id)}>Delete</button>
       </div>
     </div>
   )
