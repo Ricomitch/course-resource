@@ -12,10 +12,10 @@ const CourseCard = (props) => {
       <div className="course-name">{props.attributes.name}</div>
       <div className="course-score">{props.attributes.avg_score}</div>
       <div className="course-link">
-        <Link to={`/courses/${props.attributes.slug}`}>View Course</Link>
+        <Link to={`/courses/${props.attributes.slug}`}>View Course</Link></div>
       </div>
       
-    </div>
+    
   )
 }
 
