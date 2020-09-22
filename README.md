@@ -98,7 +98,7 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Nav    |    L     |     3 hrs      |    TBD      |   TBD     |
+| Nav    |    L     |     3 hrs      |    3 hrs      |   TBD     |
 | Screens |    M     |     5 hrs      |   TBD       |     TBD     |
 | CRUD(backend)    |    H     |     7 hrs      |      TBD     |     TBD    |
 | CRUD(frontend) |    H     |     7 hrs      |      TBD     |     TBD     |

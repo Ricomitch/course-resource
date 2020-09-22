@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { getOneReview } from '../services/reviews';
+import './ReviewEdit.css'
+
 
 
 export default function ReviewEdit(props) {
