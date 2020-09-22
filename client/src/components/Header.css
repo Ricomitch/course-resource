@@ -21,7 +21,11 @@ h1 {
 }
 
 @media only screen and (max-width: 1024px) {
-
+  Header {
+    background-color: #525252;
+    height: 60px;
+    padding: 5px;
+  }
 }
 
 @media only screen and (max-width: 414px) {
