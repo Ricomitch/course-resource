@@ -15,7 +15,6 @@ const Course = (props) => {
   let [reviews_s, setReviews] = useState([])
   const [loaded, setLoaded] = useState(false)
   let { slug } = useParams()
-  // const [ reload, setReload ] = useState(false)
 
 
   useEffect(() => {
