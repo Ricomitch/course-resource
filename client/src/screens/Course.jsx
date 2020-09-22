@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Fragment } from 'react'
-import { Route, Switch, useParams } from 'react-router-dom'
+import { Route, Switch, useParams, useHistory } from 'react-router-dom'
 import api from '../services/api-config'
 import CourseHeader from './CourseHeader'
 import ReviewForm from './ReviewForm'
@@ -15,6 +15,8 @@ const Course = (props) => {
   let [reviews_s, setReviews] = useState([])
   const [loaded, setLoaded] = useState(false)
   let { slug } = useParams()
+  // const [ reload, setReload ] = useState(false)
+
 
   useEffect(() => {
     // const slug = props.match.params.slug
@@ -54,7 +56,10 @@ const Course = (props) => {
     await deleteReview(id);
     console.log('new reviews', reviews_s)
     setReviews(prevState => prevState.filter(review => review.id !== id))
+    // history.push(`/courses/${slug}`)
+    // setReload(!reload)
   }
+
   
   const setRating = (score, e) => {
     e.preventDefault()
