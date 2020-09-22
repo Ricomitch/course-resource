@@ -1,7 +1,9 @@
 import React from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
 import './CourseCard.css'
-// import style from styled
+import styled from 'styled-components'
+
+
 
 const CourseCard = (props) => {
   return (
